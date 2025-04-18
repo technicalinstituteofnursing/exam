@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>سداد مصروفات امتحان مهارات التمريض المتقدمة</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f5f5f5;
+        }
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            background: white;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 20px;
+        }
+        .logo {
+            height: 80px;
+        }
+        h1 {
+            color: #2c3e50;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 15px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        input[type="text"] {
+            width: 100%;
+            padding: 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            box-sizing: border-box;
+        }
+        button {
+            background-color: #3498db;
+            color: white;
+            border: none;
+            padding: 10px 15px;
+            border-radius: 4px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        button:hover {
+            background-color: #2980b9;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            background-color: #f9f9f9;
+        }
+        .payment-details {
+            margin-top: 20px;
+        }
+        .highlight {
+            color: #e74c3c;
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <img src="https://scu.eg/storage/2023/03/%D8%AC%D8%A7%D9%85%D8%B9%D8%A9-%D8%A7%D9%84%D9%82%D8%A7%D9%87%D8%B1%D8%A9.png" alt="شعار الجامعة" class="logo">
+            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQlKxtTP8W92aE2Yg2LLnAPrQbxOm689NWl6w&s" alt="شعار المعهد" class="logo">
+        </div>
+        
+        <h1>سداد مصروفات امتحان مهارات التمريض المتقدمة</h1>
+        
+        <div class="form-group">
+            <label for="national-id">ادخل الرقم القومي:</label>
+            <input type="text" id="national-id" placeholder="اكتب الرقم القومي هنا">
+        </div>
+        
+        <button onclick="checkDetails()">استعلام</button>
+        
+        <div id="result" class="result" style="display: none;">
+            <h3>بيانات الطالب:</h3>
+            <p><strong>الاسم:</strong> <span id="student-name">عمر محمد بسيوني ابراهيم</span></p>
+            <p><strong>الامتحان:</strong> امتحان مهارات التمريض المتقدمة</p>
+            
+            <div class="payment-details">
+                <h3>تفاصيل السداد:</h3>
+                <p>مصروفات الامتحان: <span class="highlight">2,580 جنيه</span></p>
+                <p>برجاء اتمام السداد باستخدام احدى الطرق التالية:</p>
+                <ul>
+                    <li>حوالة بنكية</li>
+                    <li>دفع الكتروني (بالبطاقة الائتمانية)</li>
+                    <li>السداد في خزينة الجامعة</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function checkDetails() {
+            const nationalId = document.getElementById('national-id').value;
+            
+            // التحقق من تطابق الرقم القومي المدخل مع الرقم المثال
+            if (nationalId === '30608261800198') {
+                document.getElementById('result').style.display = 'block';
+            } else {
+                alert('الرقم القومي غير مسجل. يرجى التأكد من الرقم والمحاولة مرة أخرى.');
+            }
+        }
+    </script>
+</body>
+</html>
